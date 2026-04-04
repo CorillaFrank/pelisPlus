@@ -1,11 +1,11 @@
 import "dotenv/config";
 import express from "express";
-import {conectar} from "./config/database.js"; 
+import {conectar} from "./  config/database.js"; 
 
 const app = express();
 
 app.get ("/", (req, res) => {
-    res.send("Hola mundo");
+    res.send("welcome to the international");
 });
 
 app .listen(3000, () => {
