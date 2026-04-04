@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
-import {conectar} from "./  config/database.js"; 
+import {conectar} from "./config/database.js"; 
 
 const app = express();
 
