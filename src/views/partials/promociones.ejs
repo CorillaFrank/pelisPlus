@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promociones - PelisPlus</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #040406; color: #f3f3f3; }
+        header { background: #0c0c14; padding: 1rem 2rem; position: sticky; top: 0; z-index: 10; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: 0 auto; }
+        nav h1 { color: #e50914; font-size: 1.8rem; }
+        nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+        nav a { color: #fff; text-decoration: none; }
+        nav a:hover { color: #e50914; }
+        .hero { padding: 5.5rem 2rem 3rem; text-align: center; background: linear-gradient(180deg, rgba(229,9,20,.2), transparent), #09090f; }
+        .hero h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: .8rem; }
+        .hero p { max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.7; }
+        .offers { max-width: 1280px; margin: 0 auto; padding: 0 1rem 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; }
+        .offer-card { background: linear-gradient(180deg, #111418 0%, #0a0a0f 100%); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 2rem; box-shadow: 0 24px 50px rgba(0,0,0,.35); }
+        .offer-card h3 { margin-top: 0; color: #e50914; }
+        .offer-card p { color: #d2d2d2; line-height: 1.75; }
+        .price { display: inline-block; margin: 1rem 0; font-size: 2.3rem; font-weight: 800; color: #fff; }
+        .small { color: #a0a0a0; font-size: .95rem; }
+        .badge { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .75rem; border-radius: 999px; background: rgba(229,9,20,.12); color: #fff; font-size: .85rem; }
+        footer { padding: 2rem 1rem; text-align: center; color: #7d7d88; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>PelisPlus</h1>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/about">Acerca de</a></li>
+                <li><a href="/cartelera">Cartelera</a></li>
+                <li><a href="/loginCliente">Iniciar Sesión</a></li>
+                <li><a href="/register">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Promociones Exclusivas</h2>
+        <p>Aprovecha los mejores descuentos y combos especiales para ver tus películas favoritas al mejor precio.</p>
+    </section>
+    <main class="offers">
+        <div class="offer-card">
+            <h3>Combo Palomitas + Refresco</h3>
+            <span class="badge">Promo de Cine</span>
+            <p>Incluye palomitas grandes, refresco y un cupón de descuento para tu próxima compra en la cartelera.</p>
+            <div class="price">$8.99</div>
+            <p class="small">Válido hasta 30 de abril. Cupos limitados.</p>
+        </div>
+        <div class="offer-card">
+            <h3>2x1 En Entradas</h3>
+            <span class="badge">Oferta Especial</span>
+            <p>Trae a un amigo y paga solo una entrada en las funciones seleccionadas de fin de semana.</p>
+            <div class="price">Desde $12.99</div>
+            <p class="small">Disponible los viernes y sábados.</p>
+        </div>
+        <div class="offer-card">
+            <h3>Acceso VIP</h3>
+            <span class="badge">Premium</span>
+            <p>Obtén sala preferencial, asiento reservado y bebida gratis con tu suscripción mensual.</p>
+            <div class="price">$19.99/mes</div>
+            <p class="small">Activación instantánea y renovable automáticamente.</p>
+        </div>
+    </main>
+    <footer>
+        © 2026 PelisPlus. Promociones sujetas a términos y condiciones.
+    </footer>
+</body>
+</html>

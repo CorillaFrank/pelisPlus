@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de - PelisPlus</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #090909; color: #eee; }
+        header { background: #0f0f18; padding: 1rem 2rem; position: sticky; top: 0; z-index: 10; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: 0 auto; }
+        nav h1 { color: #e50914; font-size: 1.8rem; }
+        nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+        nav a { color: #fff; text-decoration: none; transition: color .3s; }
+        nav a:hover { color: #e50914; }
+        .hero { background: linear-gradient(180deg, rgba(0,0,0,.7), rgba(0,0,0,.9)), url('https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg') center/cover no-repeat; min-height: 55vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 1rem; }
+        .hero h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: .8rem; }
+        .hero p { max-width: 700px; margin: 0 auto; color: #ccc; line-height: 1.7; }
+        .content { max-width: 1200px; margin: 3rem auto; padding: 0 1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card { background: #12131a; border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 2rem; }
+        .card h3 { margin-top: 0; color: #e50914; }
+        .card p { color: #c2c2c2; line-height: 1.75; }
+        .cta { text-align: center; margin-top: 3rem; }
+        .btn { display: inline-block; padding: .9rem 2rem; border-radius: 999px; border: none; font-weight: 700; color: #fff; background: linear-gradient(135deg, #e50914, #ff6b6b); text-decoration: none; transition: transform .2s ease; }
+        .btn:hover { transform: translateY(-2px); }
+        footer { padding: 2rem 1rem; text-align: center; color: #777; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>PelisPlus</h1>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/cartelera">Cartelera</a></li>
+                <li><a href="/promociones">Promociones</a></li>
+                <li><a href="/loginCliente">Iniciar Sesión</a></li>
+                <li><a href="/register">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div>
+            <h2>Acerca de PelisPlus</h2>
+            <p>Somos tu plataforma de entretenimiento para descubrir estrenos, promociones y recomendaciones en un solo lugar. La mejor experiencia cinematográfica online para fans del cine y las series.</p>
+        </div>
+    </section>
+    <main class="content">
+        <div class="grid">
+            <div class="card">
+                <h3>Selección Curada</h3>
+                <p>Accede a una biblioteca de títulos elegidos cuidadosamente: desde clásicos hasta estrenos más recientes, todo con un diseño moderno y fácil de usar.</p>
+            </div>
+            <div class="card">
+                <h3>Comodidad Total</h3>
+                <p>Disfruta de una experiencia fluida en desktop y móvil, con búsquedas rápidas, navegación clara y presentaciones visuales pensadas para amantes del cine.</p>
+            </div>
+            <div class="card">
+                <h3>Promociones Exclusivas</h3>
+                <p>Obtén ofertas especiales, descuentos en entradas y acceso prioritario a los mejores eventos de cine. Cada mes renovamos las promociones para ti.</p>
+            </div>
+        </div>
+        <div class="cta">
+            <a class="btn" href="/cartelera">Explorar Cartelera</a>
+        </div>
+    </main>
+    <footer>
+        © 2026 PelisPlus - Tu cine en línea preferido.
+    </footer>
+</body>
+</html>

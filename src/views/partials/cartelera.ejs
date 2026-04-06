@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartelera - PelisPlus</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #05050b; color: #f3f3f3; }
+        header { background: #0e0e18; padding: 1rem 2rem; position: sticky; top: 0; z-index: 10; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: 0 auto; }
+        nav h1 { color: #e50914; font-size: 1.8rem; }
+        nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+        nav a { color: #fff; text-decoration: none; transition: color .25s ease; }
+        nav a:hover { color: #e50914; }
+        .hero { padding: 6rem 2rem 3rem; text-align: center; background: radial-gradient(circle at top, rgba(229,9,20,.2), transparent 45%), #0b0b13; }
+        .hero h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: .75rem; }
+        .hero p { max-width: 760px; margin: 0 auto; color: #c8c8c8; line-height: 1.75; }
+        .cards { max-width: 1300px; margin: 0 auto; padding: 0 1rem 3rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 1.5rem; }
+        .card { border-radius: 18px; overflow: hidden; background: #10121b; box-shadow: 0 20px 40px rgba(0,0,0,.4); }
+        .card img { width: 100%; display: block; }
+        .card-body { padding: 1.25rem; }
+        .card-body h3 { margin: 0 0 .75rem; font-size: 1.2rem; color: #e50914; }
+        .card-body p { color: #bdbdbd; line-height: 1.6; margin: 0 0 1rem; }
+        .badge { display: inline-block; padding: .35rem .75rem; border-radius: 999px; background: rgba(229,9,20,.12); color: #fff; font-size: .85rem; }
+        footer { padding: 2rem 1rem; text-align: center; color: #7a7a8a; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>PelisPlus</h1>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/about">Acerca de</a></li>
+                <li><a href="/promociones">Promociones</a></li>
+                <li><a href="/loginCliente">Iniciar Sesión</a></li>
+                <li><a href="/register">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Cartelera Actual</h2>
+        <p>Las películas más esperadas y los estrenos que no te puedes perder, todos disponibles en un solo lugar.</p>
+    </section>
+    <main class="cards">
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg" alt="Avengers Endgame">
+            <div class="card-body">
+                <h3>Avengers: Endgame</h3>
+                <p>El final épico de una saga de más de una década.</p>
+                <span class="badge">Acción</span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" alt="Inception">
+            <div class="card-body">
+                <h3>Inception</h3>
+                <p>Un ladrón entra en los sueños para robar secretos empresariales.</p>
+                <span class="badge">Misterio</span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="The Dark Knight">
+            <div class="card-body">
+                <h3>The Dark Knight</h3>
+                <p>Batman enfrenta al Joker en un duelo psicológico sin descanso.</p>
+                <span class="badge">Thriller</span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w500/eHJSfAkSEicVwox3Jz9G7C8GqLb.jpg" alt="Avatar">
+            <div class="card-body">
+                <h3>Avatar</h3>
+                <p>Una aventura visual en el mundo de Pandora.</p>
+                <span class="badge">Ciencia ficción</span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w500/9rkByJgz4hEJRuiMHXA882O5f7V.jpg" alt="Titanic">
+            <div class="card-body">
+                <h3>Titanic</h3>
+                <p>Un clásico romántico que todavía emociona a nuevas generaciones.</p>
+                <span class="badge">Drama</span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Interstellar">
+            <div class="card-body">
+                <h3>Interstellar</h3>
+                <p>Un viaje emocional a través del espacio y el tiempo.</p>
+                <span class="badge">Aventura</span>
+            </div>
+        </div>
+    </main>
+    <footer>
+        © 2026 PelisPlus. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
