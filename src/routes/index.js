@@ -4,7 +4,7 @@ const router = Router();
 
 
 router.get("/", (req, res) => {
-    res.render("partials/index", { title: "index" });
+    res.render("partials/index", { title: "PelisPlus" });
 });
 router.get ("/about", (req, res) => {
     res.render("partials/about",{title:"about"});
