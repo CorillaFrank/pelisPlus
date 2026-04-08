@@ -22,4 +22,5 @@ app.use("/api/movies", moviesRouter); //vamos a usar moviesRouter en app, es dec
 app .listen(3000, () => {
     console.log("Servidor escuchando en el puerto 3000");
 } );
+
 conectar();

@@ -1,36 +1,43 @@
-/*select*from movies*/
-import { Pool } from "pg";
+import pool from "../config/database.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
- 
+const SECRET_KEY = process.env.JWT_SECRET || "secreto_super_seguro";
 
-export const getAllMovies = async (req, res) => {
+export const register = async (req, res) => {
+
     try {
-            const movies = await Pool.query("SELECT * FROM movies");
-            res.json(movies.rows);
-    } catch (error) {
-        console.error("Error al obtener toda las peliculas",error);
-        res.status(500).json({ error: "Error de base de datos" });
+    const { username, email, password } = req.body;
+    const userCheck = await pool.query("SELECT * FROM users WHERE email = $1 OR username = $2" , [email,username]);
+    if(userCheck.rows.length > 0){
+        return res.status(400).json({ error: "El usuario ya existe" });
     }
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-}   
-export const getMovieById = async (req, res) => {
-    try {
-    const movies=await Pool.query("SELECT * FROM movies WHERE id = $1", [req.params.id]);
-    res.json(movies.rows[0]);        
-    } catch (error) {
-        console.error("Error al obtener la pelicula",error);
-        res.status(500).json({ error: "Error de base de datos" });
-    }
-}
+    const result = await pool.query(
+        "INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *", [username, email, hashedPassword]);
+    res.status(201).json({ message: "Usuario registrado exitosamente", user: result.rows[0] });    
 
-export const createMovie = async (req, res) => {
-    try {
-         const movies= await Pool.query("INSERT INTO movies (title, description, director, genre, image_url, release_date) VALUES ($1, $2, $3, $4, $5, $6)", 
-         [req.body.title,req.body.description, req.body.director, req.body.genre, req.body.image_url, req.body.release_date]);
-         res.json(movies.rows[0]);        
     } catch (error) {
-        console.error("Error al crear la pelicula",error);
-        res.status(500).json({ error: "Error de base de datos" });
-        
+        console.status(500).json({error : error.message});
     }
-}
+};
+
+export const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const result = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+        if(result.rows.length === 0){
+            return res.status(400).json({ error: "Credenciales inválidas" });
+        }
+        const user = result.rows[0];
+        const isValidPassword = await bcrypt.compare(password, user.password);
+        if(!isValidPassword){
+            return res.status(400).json({ error: "Credenciales inválidas" });
+        }
+        const token = jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: "1h" });
+        res.json({ message: "Login exitoso", token,user: { id: user.id, username: user.username, email: user.email } });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
