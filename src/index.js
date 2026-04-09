@@ -5,6 +5,7 @@ import router from "./routes/index.js";
 import { fileURLToPath } from "url";
 import path from "path";
 import moviesRouter from "./routes/moviesRoutes.js";
+import authController from "./controllers/authController.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -16,7 +17,7 @@ app.set("views",path.join(__dirname,"views")); //configuramos la carpeta donde v
 
 // Servir archivos estáticos desde la carpeta public
 app.use(express.static(path.join(__dirname, "..", "public")));
-
+app.use(express.json()); //para poder recibir datos en formato json desde el cliente
 app.use("/", router); //vamos a usar router en app, es decir, en nuestro servidor
 app.use("/api/movies", moviesRouter); //vamos a usar moviesRouter en app, es decir, en nuestro servidor, y le vamos a asignar la ruta /api/movies para acceder a las rutas de moviesRouter
 app .listen(3000, () => {
